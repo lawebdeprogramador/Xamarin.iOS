@@ -50,6 +50,7 @@ namespace Lab05
                     PresentViewController(alert, true, null);
                 }
             };
+
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
@@ -57,6 +58,21 @@ namespace Lab05
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
+        }
+
+        partial void VerifyButton_TouchUpInside(UIButton sender)
+        {
+            Validate();
+        }
+
+        private async void Validate()
+        {
+            var client = new SALLab05.ServiceClient();
+            var result = await client.ValidateAsync("email@mail.com", "rabetao6nove", this);
+            var alert = UIAlertController.Create("OK", $"{result.Status}\n{result.FullName}\n{result.Token}", 
+                UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            PresentViewController(alert, true, null);
         }
     }
 }

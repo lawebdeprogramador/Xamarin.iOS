@@ -25,6 +25,14 @@ namespace Lab05
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton translateButton { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton verifyButton { get; set; }
+
+        [Action ("VerifyButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void VerifyButton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (callButton != null) {
@@ -40,6 +48,11 @@ namespace Lab05
             if (translateButton != null) {
                 translateButton.Dispose ();
                 translateButton = null;
+            }
+
+            if (verifyButton != null) {
+                verifyButton.Dispose ();
+                verifyButton = null;
             }
         }
     }
