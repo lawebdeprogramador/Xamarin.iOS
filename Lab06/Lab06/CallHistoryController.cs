@@ -7,7 +7,8 @@ namespace Lab06
 {
     public partial class CallHistoryController : UITableViewController
     {
-        public List<string> PhoneNumbers;
+        public List<string> PhoneNumbers { get; set; }
+
         protected NSString CallHistoryCellID = new NSString("CallHistoryCell");
 
         public CallHistoryController(IntPtr handle) : base(handle)

@@ -29,6 +29,10 @@ namespace Lab06
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton translateButton { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton validationButton { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (callButton != null) {
@@ -49,6 +53,11 @@ namespace Lab06
             if (translateButton != null) {
                 translateButton.Dispose ();
                 translateButton = null;
+            }
+
+            if (validationButton != null) {
+                validationButton.Dispose ();
+                validationButton = null;
             }
         }
     }
